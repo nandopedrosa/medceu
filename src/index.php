@@ -643,7 +643,7 @@
             <form class="form-signin" action="contato.php" method="post">
               <div class="form-group">
                 <label for="inputName" class="sr-only">Nome*</label>
-                <input id="inputName" class="form-control" placeholder="Nome*" name="nome" required autofocus>
+                <input id="inputName" class="form-control" placeholder="Nome*" name="nome" required>
               </div>
 
               <div class="form-group">
