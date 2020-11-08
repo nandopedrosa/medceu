@@ -1,2 +1,2 @@
-# Clínica Medce
-Site da clínica medceu feito em PHP e JQuery
+# Clínica Medceu
+Site da Clínica Medceu feito em PHP e JQuery
