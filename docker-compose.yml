@@ -25,5 +25,5 @@ services:
       - MYSQL_USER=root
       - MYSQL_PASSWORD=root
     ports:
-      - "8082:3306"
+      - "8889:3306"
 
