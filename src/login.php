@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_SESSION['userid'])) {
+      header("location: dashboard.php");    
+    }
+  ?>
+
 <html lang="pt-br">
 
 <head>
@@ -16,16 +23,7 @@
   <link href="assets/css/signin.css" rel="stylesheet">
 </head>
 
-<body class="text-center">
-
-
-  <?php
-    session_start();
-    if(isset($_SESSION['userid'])) {
-      header("location: dashboard.php");    
-    }
-  ?>
-  
+<body class="text-center"> 
 
   <?php
   require_once "mensagens.php";

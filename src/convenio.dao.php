@@ -15,11 +15,10 @@ function inserir_convenio($sigla, $descricao)
 {
     require_once "dbhandler.php";
 
-    $sql = "insert into convenio(sg_convenio, ds_convenio) values (?,?)";
+    $sql = "insert into convenio(sg_convenio, ds_convenio) values (?,?);";
     $statement = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($statement, $sql)) {
-        header("location: login.php?erro=statementfailed");
-        exit();
+        exit("Não foi possível conectar ao banco de dados. Erro: " . mysqli_stmt_error($statement));
     }
     mysqli_stmt_bind_param($statement, "ss", $sigla, $descricao);
     mysqli_stmt_execute($statement);
@@ -33,11 +32,10 @@ function deletar_convenio($idConvenio)
 {
     require_once "dbhandler.php";
 
-    $sql = "delete from convenio where id_convenio = ?";
+    $sql = "delete from convenio where id_convenio = ?;";
     $statement = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($statement, $sql)) {
-        header("location: login.php?erro=statementfailed");
-        exit();
+        exit("Não foi possível conectar ao banco de dados. Erro: " . mysqli_stmt_error($statement));
     }
     mysqli_stmt_bind_param($statement, "i", $idConvenio);
     mysqli_stmt_execute($statement);
@@ -53,12 +51,12 @@ function buscar_convenios()
 
     $retorno = [];
 
-    $sql = "select id_convenio as id, sg_convenio as Convênio, ds_convenio as Descrição from convenio order by sg_convenio";
+    $sql = 'select id_convenio as id, sg_convenio as "Convênio", ds_convenio as "Descrição" from convenio order by sg_convenio;';
     $statement = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($statement, $sql)) {
-        header("location: login.php?erro=statementfailed");
-        exit();
+    if (!mysqli_stmt_prepare($statement, $sql)) {        
+        exit("Não foi possível conectar ao banco de dados. Erro: " . mysqli_stmt_error($statement));
     }
+    
     mysqli_stmt_execute($statement);
     $resultado = mysqli_stmt_get_result($statement);
 

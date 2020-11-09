@@ -18,8 +18,7 @@ function getUsuario($email) {
     $sql = "select * from usuario where tx_email = ?;";  
     $statement = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($statement, $sql)) {
-        header("location: login.php?erro=statementfailed");
-        exit();
+        exit("Não foi possível conectar ao banco de dados. Erro: " . mysqli_stmt_error($statement));
     }  
     mysqli_stmt_bind_param($statement, "s", $email);  
     mysqli_stmt_execute($statement);

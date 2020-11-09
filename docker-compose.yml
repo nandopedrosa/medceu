@@ -8,7 +8,9 @@ services:
     volumes:
       - ./src:/var/www/html/
     ports:
-      - 7777:80     
+      - 7777:80
+    environment: 
+      - PORT=80
     
     
 
