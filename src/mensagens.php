@@ -58,6 +58,9 @@ if (isset($_GET["erro"])) {
         case "authfail":
             $html = str_replace("#MSG-DE-ERRO#", "Usuário ou Senha incorretos.", $html);
             break;
+        case "loginrequired":
+            $html = str_replace("#MSG-DE-ERRO#", "É necessário fazer o login.", $html);
+            break;
         case "usuarionaoexiste":
             $html = str_replace("#MSG-DE-ERRO#", "Este usuário não existe.", $html);
             break;

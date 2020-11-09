@@ -24,7 +24,7 @@
 
         //Logou com sucesso
         session_start();
-        $_SESSION["username"] = $email;
+        $_SESSION["userid"] = $email;
         header("location: dashboard.php");
     }
 

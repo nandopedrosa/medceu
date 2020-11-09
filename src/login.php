@@ -18,10 +18,23 @@
 
 <body class="text-center">
 
+
+  <?php
+    session_start();
+    if(isset($_SESSION['userid'])) {
+      header("location: dashboard.php");    
+    }
+  ?>
+  
+
+  <?php
+  require_once "mensagens.php";
+  ?>
+
   <div class="container">
     <?php
-      require_once "mensagens.php";
-    ?>   
+    require_once "mensagens.php";
+    ?>
 
     <div class="row">
       <form class="form-signin" action="login.controller.php" method="post">

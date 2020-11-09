@@ -25,7 +25,7 @@
 </head>
 
 <body>
-
+  <?php require_once 'check_login.php'; ?>
   <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md fixed-top dashboard-navbar">
